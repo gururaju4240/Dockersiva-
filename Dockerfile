@@ -1,1 +1,1 @@
-F
+FROM Ubuntu:latest 
