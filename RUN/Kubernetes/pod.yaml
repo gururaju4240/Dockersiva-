@@ -2,7 +2,7 @@ kind: pod
 apiVersion: v1
 metadata:
    name: nginx
-   #Namespace: expense
+   
 spec:
   containers:
   - name: nginx
