@@ -1,25 +1,22 @@
 apiVersion: apps/v1
-kind: Replicaset
+kind: ReplicaSet
 metadata:
   name: nginx
-  # the labels are replica set 
   labels:
     app: frontend
     tier: web
-  spec:
+spec:
   replicas: 3
   selector:
-   # replica use the labels to find the pods for creating desride number of replica
     matchLabels:
-    app: frontend
-    tier: web
-  #pod templte
-    template:
-      metadata:
-        labels:
+      app: frontend
+      tier: web
+  template:
+    metadata:
+      labels:
         app: frontend
         tier: web
-      spec:
-        containers:
+    spec:
+      containers:
         - name: nginx
           image: nginx
