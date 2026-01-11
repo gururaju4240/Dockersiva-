@@ -1,22 +1,42 @@
 apiVersion: apps/v1
-kind: ReplicaSet
+kind: Deployment
 metadata:
   name: nginx
   labels:
-    app: frontend
-    tier: web
+    app: nginx
+    tier: frontend
 spec:
   replicas: 3
   selector:
     matchLabels:
-      app: frontend
-      tier: web
+      app: nginx
+      tier: frontend
   template:
     metadata:
       labels:
-        app: frontend
-        tier: web
+        app: nginx
+        tier: frontend
     spec:
       containers:
         - name: nginx
-          image: nginx
+          image: gururaju424/deployment
+          ports:
+          - containerport:80
+---
+apiVersion: apps/v1
+kind: service
+metadata:
+  name: nginx -1b
+spec:
+  type: LoadBalancer
+  selector: 
+    project: expense
+    component: backend
+    environment: dev
+    version: "1.0.0"
+    demo: 1b
+  ports:
+  - protocol: TCP
+    port: 80
+    targetport: 80
+    nodeport: 30007
