@@ -19,24 +19,22 @@ spec:
     spec:
       containers:
         - name: nginx
-          image: gururaju424/deployment
+          image: gururaju424/deployment:1.0
           ports:
-          - containerport:80
+            - containerPort: 80
 ---
-apiVersion: apps/v1
-kind: service
+apiVersion: v1
+kind: Service
 metadata:
-  name: nginx 
+  name: nginx
 spec:
   type: LoadBalancer
-  selector: 
-    project: expense
-    component: backend
-    environment: dev
-    version: "1.0.0"
-    demo: 1b
+  selector:
+    app: nginx
+    tier: frontend
   ports:
-  - protocol: TCP
-    port: 80
-    targetport: 80
-    nodeport: 30007
+    - protocol: TCP
+      port: 80
+      targetPort: 80
+      nodePort: 30007
+
