@@ -1,14 +1,15 @@
+apiVersion: v1
 kind: Service
 metadata:
   name: nginx-nodeport
 spec:
+  type: LoadBalancer
   selector:
-    type: LoadBalancer
     project: roboshop
-    component: frontend   # also check this key
+    component: frontend
     environment: dev
   ports:
-  - protocol: TCP
-    port: 80
-    targetPort: 80
-    Nodeport: 32141
+    - protocol: TCP
+      port: 80
+      targetPort: 80
+      nodePort: 32141
