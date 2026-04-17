@@ -9,7 +9,7 @@ metadata:
     component: frontend
 
 spec:
-  replicas: 3
+  replicas: 10
   selector:
     matchLabels:
       project: roboshop
