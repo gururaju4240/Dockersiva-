@@ -1,15 +1,10 @@
-#!bin/bash
+#!/bin/bash
 
-NUM1=100
-NUM2=200
+MOVIES=("pushpa" "rrr" "devara")
+# index starts from 0, size is 3
 
-SUM=$(($NUM1+$NUM2))
-echo "SUM is $SUM"
+echo "First movie: ${MOVIES[0]}"
+echo "Second movie: ${MOVIES[1]}"
+echo "Third movie: ${MOVIES[2]}"
 
-#array 
-FRUITS=("apple","banana","pomo")
-
-echo "Fruits are: ${FRUITS[@]}"
-echo "first fruit is: ${FRUITS[0]}"
-echo "second fruit is: ${FRUITS[1]}"
-echo "third fruit is: ${FRUITS[2]}"
+echo "All movies are: ${MOVIES[@]}"
