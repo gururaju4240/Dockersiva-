@@ -1,11 +1,10 @@
 #!/bin/bash
 
-START_TIME=$(date +%s)
+NUMBER1=$1
+NUMBER2=$2
 
-echo "script executed at : $START_TIME"
+TIMESTAMP=$(date)
+echo "Script executed at: $TIMESTAMP"
+SUM=$(($NUMBER1+$NUMBER2))
 
-sleep 10
-
-END_TIME=$(date +%s)
-TOTAL_TIME=$(($END_TIME-$START_TIME))
-echo "script executed in: $TOTAL_TIME"
+echo "SUM of $NUMBER1 and $NUMBER2 is: $SUM"
