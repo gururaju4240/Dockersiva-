@@ -3,7 +3,7 @@ resource "aws_instance" "example" {
   instance_type = "t3.micro"
 
   tags = {
-    Name = "HelloWorld"
+    Name = "Hello"
     project = "roboshop"
   }
 
