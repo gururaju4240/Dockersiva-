@@ -6,6 +6,7 @@ resource "aws_instance" "example" {
     Name = "Hello"
     project = "roboshop"
   }
+}
 
   resource "aws_security_group" "allow_tls" {
   name        = "allow -all-terraform"  # this aws account
