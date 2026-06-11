@@ -5,7 +5,7 @@ resource "aws_instance" "ec1" {
   vpc_security_group_ids = [aws_security_group.allow_all.id]
 
   tags = {
-    Name    = "Hello1"
+    Name    = "Hello2"
     Project = "roboshop1"
   }
 }
