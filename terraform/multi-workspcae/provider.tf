@@ -6,13 +6,13 @@ terraform {
     }
   }
 
+  terraform {
   backend "s3" {
-    bucket  = "remote-state-aws-88s" # Replace with your unique bucket name
-    key     = "remote-state.tfstate"
-    region  = "us-east-1"
-    encrypt = true
-    use_lockfile   = true
+    bucket = "my-terraform-state"
+    key    = "terraform.tfstate"
+    region = "ap-south-1"
   }
+}
 }
 
 provider "aws" {
